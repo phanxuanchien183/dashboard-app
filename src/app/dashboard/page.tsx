@@ -1,6 +1,9 @@
 "use client";
 
 import TableWithSearch from "@/component/TableWithSearch";
+import UsersOverTimeChart from "@/component/UsersOverTimeChart";
+import UsersPlatformChart from "@/component/UsersPlatformChart";
+import UsersProductsTimeChart from "@/component/UsersProductsTimeChart";
 
 interface DataType {
   id: number;
@@ -22,6 +25,17 @@ const data: DataType[] = [
 function Page() {
   return (
     <div>
+      <div className="min-h-screen bg-gray-100 p-6">
+        <h1 className="text-3xl font-bold text-center mb-8">
+          Biểu đồ người dùng
+        </h1>
+        <div className="grid grid-cols-3 gap-8">
+          <UsersOverTimeChart />
+          <UsersProductsTimeChart />
+          <UsersPlatformChart />
+        </div>
+      </div>
+
       <TableWithSearch data={data} />
     </div>
   );
